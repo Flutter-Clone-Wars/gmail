@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gmail/demos/demo_scaffold.dart';
+import 'package:gmail/demos/email_list_demo.dart';
+import 'package:gmail/email_composition/email_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -29,10 +33,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: SizedBox(),
+    return Scaffold(
+      body: DemoScaffold(
+        background: Colors.white,
+        child: EmailListDemo(),
       ),
     );
+
+    // return const Scaffold(
+    //   body: Center(
+    //     child: EmailListDemo(),
+    //   ),
+    // );
   }
 }
