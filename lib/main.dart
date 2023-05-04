@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gmail/demos/demo_scaffold.dart';
-import 'package:gmail/demos/email_list_demo.dart';
-import 'package:gmail/email_composition/email_list.dart';
+import 'package:gmail/email_composition/email_composer_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GMail Clone',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData.dark(),
       home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -33,17 +29,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: DemoScaffold(
-        background: Colors.white,
-        child: EmailListDemo(),
-      ),
-    );
-
-    // return const Scaffold(
-    //   body: Center(
-    //     child: EmailListDemo(),
-    //   ),
-    // );
+    return const EmailComposerScreen();
   }
 }
